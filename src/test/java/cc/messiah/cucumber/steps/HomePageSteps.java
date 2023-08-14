@@ -50,8 +50,12 @@ public class HomePageSteps {
     }
 
     @Then("^verify the error message \"([^\"]*)\"$")
-    public void verifyTheErrorMessage(String arg0) throws Throwable {
+    public void verifyTheErrorMessage(String arg0) {
         Assert.assertEquals(arg0, new HomePage().verifyErrorText());
     }
 
+    @Then("^verify the error \"([^\"]*)\"$")
+    public void verifyTheError(String arg0) {
+        Assert.assertEquals(arg0, new HomePage().verifyNameHelpText());
+    }
 }

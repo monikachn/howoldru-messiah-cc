@@ -40,6 +40,10 @@ public class HomePage extends Utility {
     WebElement verifyAge;
 
     @CacheLookup
+    @FindBy(xpath = "//span[@id='help_name']")
+    WebElement verifyNameHelpText;
+
+    @CacheLookup
     @FindBy(xpath = "//span[@id='help_birthday']")
     WebElement getVerifyText;
 
@@ -66,6 +70,10 @@ public class HomePage extends Utility {
     public String verifyTheAge() {
         log.info("verifyAge the text :" + verifyAge.toString());
         return getTextFromElement(verifyAge);
+    }
+    public String verifyNameHelpText(){
+        log.info("verifyNameHelpText :" + verifyNameHelpText.toString());
+        return getTextFromElement(verifyNameHelpText);
     }
     public String verifyErrorText(){
         log.info("verifyErrorText :" + getVerifyText.toString());
